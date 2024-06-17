@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="icon.ico" />
+    <title>每日复盘</title>
+    <style>
+		/* 默认样式，适用于大屏设备 */
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+		}
+		
+		.date {
+			font-weight: bold;
+			white-space: nowrap; /* 防止日期中的文字自动换行 */
+			flex-shrink: 0; /* 防止.date压缩 */
+		}
+		
+		.day {
+			flex-grow: 1;
+			margin-bottom: 2em;
+		}
+		
+		.day ul {
+			list-style-type: disc;
+			padding-left: 1em;
+		}
+		
+		/* 为小屏设备定义的样式 */
+		@media screen and (max-width: 600px) {
+			.container {
+				flex-direction: column;
+				display: block;
+			}
+		
+			.date {
+				margin-bottom: 0.5em;
+			}
+		
+			.day {
+				flex-grow: 0; /* 当屏幕宽度小于600px时，.day不再填充剩余空间 */
+			}
+		}
+    </style>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+</html>
